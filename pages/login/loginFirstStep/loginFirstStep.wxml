@@ -1,0 +1,27 @@
+<!--loginFirstStep.wxml-->
+<view class="login">
+  <!-- <form action="" class="forms"> -->
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">国家/地区</view>
+      </view>
+      <view class="weui-cell__bd">
+        <text class="weui-input">中国</text> 
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">手机号</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input maxlength="11" bindinput="bindMobile" type="text" class="weui-input" placeholder="请填写手机号码"/>
+      </view>
+    </view>    
+  <!-- </form> -->
+  <view class="page__bd page__bd_spacing">
+    <button class="weui-btn" wx:if="{{mobile.length == 11}}" bindtap="linkTo" type="primary">下一步</button>
+    <button class="weui-btn" wx:else type="primary" disabled="true">下一步</button>
+  </view>
+</view>
+
+

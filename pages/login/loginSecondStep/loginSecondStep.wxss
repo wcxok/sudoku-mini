@@ -1,0 +1,23 @@
+/* loginSecondStep.wxss */
+@import '../../../lib/weui/weui.wxss';
+.loginTwo{
+  font-size: 34rpx;  
+}
+.loginTwo .weui-cell_input {
+  background: #fff
+}
+.loginTwo .page__bd_spacing {
+  padding: 0 36rpx;
+  margin-top: 60rpx;
+}
+.loginTwo .weui-btn {
+  background: #547eef;
+  border:1rpx solid #547eef;
+}
+.loginTwo button[disabled][type="primary"] {
+  background: #8fa9ee;
+  border: 1rpx solid #8fa9ee
+}
+.loginTwo .weui-cell_input {
+  background: #ffffff;
+}

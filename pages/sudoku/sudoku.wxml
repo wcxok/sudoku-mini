@@ -1,0 +1,95 @@
+<!--sudoku.wxml-->
+<!-- headers -->
+<view id="level" class="level">
+  <view class="buttons">
+    <block wx:for="{{sudokuTypes}}" wx:key="{{item.value}}">
+      <button size="mini"
+        data-type="{{item.value}}"
+        data-level="{{item.level}}"
+        bindtap="sudokuTypeFun"
+        class="{{sudokuType === item.value ? 'active' : ''}}">
+        {{item.label}}
+      </button>
+    </block>
+  </view>
+</view>
+
+<!-- 顶部按钮  -->
+<view class="import">
+  <view>
+    <view bindtap="gameFresh">
+      <image src="../../../images/sudoku/fresh.png"></image>
+    </view>
+    <button size="mini" id="stop" bindtap="gameStop">{{stopText}}</button>
+  </view>
+  <view>
+     <view>
+        <image src="../../../images/sudoku/time.png"></image>
+        <text>{{timer}}</text>
+      </view>
+      <view bindtap="gameExplain">
+        <image src="../../../images/sudoku/ask.png"></image>
+      </view>
+  </view>
+</view>
+
+<!-- 九宫格 -->
+<view id="container" class="contain grid">
+  <block >
+    <view
+      wx:for="{{sudokuNumbers}}"
+      wx:key="idx"
+      wx:for-index="rowIndex"
+      class="row {{rowGroupClass[rowIndex % 3]}} {{selectRowIndex === rowIndex ? 'selectRow' : ''}}"
+      wx:for-item="item">
+      <!--
+        1. 如果原始数据的值为0，则添加class名 empty
+        2. 横向添加样式，以便处理宫的显示
+        3. 
+        -->
+      <text
+        wx:for="{{item}}"
+        wx:for-item="cell"
+        wx:key="cell"
+        wx:for-index="cellIndex"
+        data-row="{{rowIndex}}"
+        data-cell="{{cellIndex}}"
+        data-number="{{cell}}"
+        data-alls="{{item}}"
+        class="{{cell===0?'empty':'tips'}} {{colGroupClass[cellIndex % 3]}} {{selectCellIndex === cellIndex ? 'selectCell' : ''}} {{(selectRowIndex === rowIndex && selectCellIndex === cellIndex && cell) ? 'markText' : ''}} {{selectRowIndex === rowIndex && selectCellIndex === cellIndex && !cell ? 'mark2' : ''}} {{isClick && equalNumbers[rowIndex][cellIndex] && cell ? 'markText' : ''}} {{isClick && sudokuNumbers[rowIndex][cellIndex] !== cloneSudokuNumbers[rowIndex][cellIndex] && cell ? 'fill' : ''}} {{isFlag && flagNumbers[rowIndex][cellIndex] ? 'mark1' : ''}} {{isCheck && ((!checkNumbers[rowIndex][cellIndex] && sudokuNumbers[rowIndex][cellIndex] !== cloneSudokuNumbers[rowIndex][cellIndex]) || !cell) ? 'error' : ''}}"
+        style="height: {{cellWidth}};line-height: {{cellWidth}};"
+        bindtap="clickCell"
+        >{{cell ? cell : selectPopNumber}}</text>
+    </view>
+  </block>
+</view>
+
+<!-- 按钮组 -->
+<view id="dashboard" class="dashboard">
+  <view class="buttons">
+    <button size="mini" id="pre" bindtap="gameClear">
+      <!-- <image src="../../../images/sudoku/next.png"></image> -->
+      清空
+    </button>
+    <button size="mini" id="back" bindtap="gameCheck">
+      <!-- <image src="../../../images/sudoku/next.png"></image> -->
+      检查
+    </button>
+    <button size="mini" id="clear" bindtap='gameCellRemark'>标记</button>
+    <button size="mini" id="rebuild" bindtap='gameCellDelete'>删除</button>
+    <button size="mini" class="null"></button>
+    <button size="mini"
+      wx:for="{{fixedNumbers_top}}"
+      wx:key="{{item}}"
+      data-number="{{item}}"
+      bindtap="gameCellNumber">{{item}}</button>
+  </view>
+
+  <view class="buttons">
+    <button size="mini"
+      wx:for="{{fixedNumbers_bottom}}"
+      wx:key="{{item}}"
+      data-number="{{item}}"
+      bindtap="gameCellNumber">{{item}}</button>
+  </view>
+</view>

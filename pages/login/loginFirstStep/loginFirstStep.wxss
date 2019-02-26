@@ -1,0 +1,20 @@
+/* loginFirstStep.wxss */
+ @import "../../../lib/weui/weui.wxss"; 
+.login {
+  font-size: 34rpx; 
+}
+.login .page__bd_spacing {
+  padding: 0 36rpx;
+  margin-top: 60rpx;
+}
+.login .weui-btn {
+  background: #547eef;
+  border:1rpx solid #547eef;
+}
+.login button[disabled][type="primary"] {
+  background: #8fa9ee;
+  border: 1rpx solid #8fa9ee
+}
+.login .weui-cell_input {
+  background: #ffffff;
+}

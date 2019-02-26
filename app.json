@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "pages/sudoku/sudoku"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#547eef",
+    "navigationBarTitleText": "一勺一品",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#547eef"
+  },
+  "debug": true,
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  }
+}

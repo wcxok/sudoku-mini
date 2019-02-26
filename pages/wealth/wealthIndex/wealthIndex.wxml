@@ -1,0 +1,5 @@
+<!--wealthIndex.wxml-->
+<view class="wealth">
+  <text>数独</text>
+</view>
+

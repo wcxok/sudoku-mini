@@ -1,0 +1,178 @@
+/**sudoku.wxss**/
+.level {
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+.level .buttons {
+  display: flex;
+  margin: 20rpx 0;
+}
+.level .buttons button {
+  border: 4rpx solid #ffa042;
+  background: #ffa042;
+  color: #fff;
+}
+.level .buttons button.active {
+  background: #fff;
+  border: 4rpx solid #ffa042;
+  color: #ffa042;
+}
+
+.import {
+  display: flex;
+  margin: 0 38rpx 20rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  justify-content: space-between;
+}
+.import view {
+  display: inline-block;
+  vertical-align: text-bottom
+}
+.import view > view {
+  background: #ffa042;
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+  height: 80rpx;
+}
+.import view > image {
+  height: 40rpx;
+  width: 40rpx;
+  padding: 0rpx 16rpx;
+  margin-top: 20rpx;
+}
+.import view > button {
+  background: #989ddd;
+  color: #fff;
+  text-align: center;
+  padding: 0 8rpx;
+}
+.import > view:last-child {
+  flex: 1;
+  justify-content: flex-end;
+  display: flex;
+}
+.import view:last-child view {
+  background: transparent;
+  margin-right: 0;
+}
+.import view:last-child view:first-child {
+  display: flex;
+  margin-right: 20rpx;
+}
+.import view:last-child view:first-child image{
+  height: 50rpx;
+  width: 50rpx;
+  margin-top: 16rpx;
+}
+
+.contain {
+  padding: 0 5%;
+}
+.contain .row {
+  width: 100%;
+}
+.contain .row > text{
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  width: 10.65%;
+  height: 48rpx;
+  line-height: 48rpx;
+  border: 2rpx solid #ffa042;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  color: forestgreen;
+  font-weight: bolder;
+}
+.contain .row > text:first-child {
+  border-left-width: 4rpx;
+}
+.contain .row > text:last-child {
+  border-right-width: 4rpx;
+}
+.contain .row > text.col_g_right {
+  border-right-width: 2rpx;
+}
+.contain .row > text:last-child.col_g_right {
+  border-right-width: 4rpx;
+}
+.contain .row > text.tips {
+  color: firebrick;
+  font-weight: bolder;
+}
+.contain .row.selectRow {
+  background: linear-gradient(to bottom, #73FF96 0%, #fff 20%, #fff 80%, #73FF96 100%);
+}
+.contain .row > text.selectCell {
+  background: linear-gradient(to right, #73FF96 0%, #fff 20%, #fff 80%, #73FF96 100%);
+}
+.contain .row > text.markText {
+  background: #ffa042;
+}
+.contain .row > text.mark2 {
+  background: lightblue;
+}
+.contain .row > text.mark1 {
+  background: red;
+}
+.contain .row > text.fill {
+  color: forestgreen;
+}
+.contain .row > text.error {
+  background: lightpink;
+}
+.contain .row > text.empty {
+  color: transparent;
+}
+.contain .row > text.error.empty {
+  color: lightpink;
+}
+.contain .row.row_g_bottom > text{
+  border-bottom-width: 2rpx;
+}
+.contain .row:first-child > text {
+  border-top-width: 4rpx;
+}
+.contain .row:last-child > text {
+  border-bottom-width: 4rpx;
+}
+.dashboard {
+  border-radius: 20rpx;
+  border: 2rpx solid #ffa042;
+  padding: 10rpx 10rpx;
+  margin: 20rpx 36rpx;
+}
+.dashboard .buttons {
+   display: flex;
+   justify-content: space-between;
+}
+.dashboard .buttons > button {
+  border: none;
+  display: inline-block;
+  background: #ffa042;
+  color: #fff;
+  text-align: center;
+  padding: 0 8rpx;
+  margin: 10rpx 8rpx;
+  height: 68rpx;
+  width: 68rpx;
+  line-height: 68rpx;
+  font-weight: bold;
+}
+.dashboard .buttons > button image{
+  margin-top: 8rpx;
+  height: 50rpx;
+  width: 50rpx;
+}
+.dashboard .buttons > button#back image{
+  transform: rotateY(180deg);
+}
+.buttons > button::after {
+  border: none;
+}
+.dashboard .buttons .null {
+  background: transparent;
+}
