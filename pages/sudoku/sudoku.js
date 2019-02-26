@@ -70,6 +70,9 @@ Page({
     this.timeCalculate()
     gameTimer = setInterval(this.timeCalculate, 1000)
     this.clearGameTime()
+    this.setData({
+      isClick: false
+    })
   },
 
   /**

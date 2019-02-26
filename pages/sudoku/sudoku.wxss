@@ -38,8 +38,8 @@
   height: 80rpx;
 }
 .import view > image {
-  height: 40rpx;
-  width: 40rpx;
+  height: 32rpx;
+  width: 32rpx;
   padding: 0rpx 16rpx;
   margin-top: 20rpx;
 }
