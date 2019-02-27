@@ -18,7 +18,8 @@
 <view class="import">
   <view>
     <view bindtap="gameFresh">
-      <image src="../../../images/sudoku/fresh.png"></image>
+      <!-- <image src="../../../images/sudoku/fresh.png"></image> -->
+      刷新
     </view>
     <button size="mini" id="stop" bindtap="gameStop">{{stopText}}</button>
   </view>

@@ -68,8 +68,9 @@ Page({
   gameFresh: function () {
     this.initGame(this.data.gameLevel)
     this.timeCalculate()
-    gameTimer = setInterval(this.timeCalculate, 1000)
+    // gameTimer = setInterval(this.timeCalculate, 1000)
     this.clearGameTime()
+    gameTimer = setInterval(this.timeCalculate, 1000)
     this.setData({
       isClick: false
     })
@@ -108,6 +109,7 @@ Page({
               stopText: '暂停'
             })
           } else {
+            clearInterval(gameTimer)
             _self.setData({
               stopText: '继续'
             })
@@ -156,6 +158,7 @@ Page({
             stopText: '暂停'
           })
         } else if (res.cancel) {
+          clearInterval(gameTimer)
           _self.setData({
             stopText: '继续'
           })

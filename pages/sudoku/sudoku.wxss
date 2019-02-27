@@ -37,6 +37,16 @@
   margin-right: 20rpx;
   height: 80rpx;
 }
+.import view > view:first-child {
+  color: #fff;
+  font-size: 24rpx;
+  text-align: center;
+  padding: 0rpx 16rpx;
+}
+.import view > view text {
+  color: #000;
+  font-size: 36rpx;
+}
 .import view > image {
   height: 32rpx;
   width: 32rpx;
